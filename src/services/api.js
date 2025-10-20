@@ -9,7 +9,6 @@ const apiClient = axios.create({
   }
 });
 
-// Add token to requests
 apiClient.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -18,7 +17,6 @@ apiClient.interceptors.request.use((config) => {
   return config;
 });
 
-// Auth services
 export const authService = {
   register: (username, email, password) =>
     apiClient.post('/auth/register', { username, email, password }),
@@ -30,7 +28,6 @@ export const authService = {
     apiClient.get('/auth/me')
 };
 
-// Todo services
 export const todoService = {
   getTodos: () =>
     apiClient.get('/todos'),
