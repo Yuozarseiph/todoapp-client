@@ -98,7 +98,6 @@ function TodoList({ darkMode }) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      {/* Stats */}
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -119,8 +118,6 @@ function TodoList({ darkMode }) {
           </motion.div>
         ))}
       </motion.div>
-
-      {/* Add Todo Button */}
       <motion.button
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
@@ -131,7 +128,6 @@ function TodoList({ darkMode }) {
         Add New Todo
       </motion.button>
 
-      {/* Todo Form */}
       <AnimatePresence>
         {showForm && (
           <TodoForm
@@ -142,9 +138,7 @@ function TodoList({ darkMode }) {
         )}
       </AnimatePresence>
 
-      {/* Filters and Sort */}
       <div className="flex flex-wrap gap-4 mb-6">
-        {/* Completion Filter */}
         <div className={`flex gap-2 ${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-2 shadow-md`}>
           {['all', 'active', 'completed'].map(f => (
             <motion.button
@@ -161,8 +155,6 @@ function TodoList({ darkMode }) {
             </motion.button>
           ))}
         </div>
-
-        {/* Priority Filter */}
         <div className={`flex gap-2 ${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-2 shadow-md`}>
           {['all', 'low', 'medium', 'high'].map(p => (
             <motion.button
@@ -179,8 +171,6 @@ function TodoList({ darkMode }) {
             </motion.button>
           ))}
         </div>
-
-        {/* Sort Options */}
         <select
           aria-label="Sort todos"
           value={sortOption}
@@ -193,8 +183,6 @@ function TodoList({ darkMode }) {
           <option value="priority_asc">Lowest priority first</option>
         </select>
       </div>
-
-      {/* Todo List */}
       {loading ? (
         <div className="text-center py-12">
           <motion.div
