@@ -10,7 +10,6 @@ function App() {
   const [darkMode, setDarkMode] = useState(() => {
     const stored = localStorage.getItem('theme');
     if (stored) return stored === 'dark';
-    // Default to light
     return false;
   });
 
